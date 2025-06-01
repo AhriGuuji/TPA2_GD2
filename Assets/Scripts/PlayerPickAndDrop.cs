@@ -21,16 +21,20 @@ public class PlayerPickAndDrop : MonoBehaviour
         {
             if (!_hit)
             {
-                _hit = Physics2D.Raycast(transform.position, transform.up , distance: _gridSize*2, layerMask: _fruitLayer);
+                _hit = Physics2D.Raycast(transform.position, transform.up, distance: _gridSize * 2, layerMask: _fruitLayer);
 
                 if (_hit)
+                {
                     _hit.transform.SetParent(gameObject.transform);
+                    _hit.transform.GetComponent<Collider2D>().isTrigger = true;
+                }
             }
-            else
-            {
-                _hit.transform.parent = null;
-                _hit = default;
-            }
+                else
+                {
+                    _hit.transform.GetComponent<Collider2D>().isTrigger = false;
+                    _hit.transform.parent = null;
+                    _hit = default;
+                }
         }
     }
 }
