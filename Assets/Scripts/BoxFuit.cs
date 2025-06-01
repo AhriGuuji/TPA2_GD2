@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class BoxFuit : MonoBehaviour
 {
+    [SerializeField] private string _fruitName;
     private Fruit _fruit;
     void OnCollisionStay2D(Collision2D collision)
     {
         _fruit = collision.gameObject.GetComponent<Fruit>();
-        Debug.Log(collision.transform.name);
 
         if (_fruit)
         {
             Destroy(collision.gameObject);
-            ScoreManager.Instance.AddScore(_fruit);
+            if(_fruit.name.Contains(_fruitName))
+                ScoreManager.Instance.AddScore(_fruit);
         }
     }
 }

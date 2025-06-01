@@ -21,7 +21,7 @@ public class PlayerPickAndDrop : MonoBehaviour
         {
             if (!_hit)
             {
-                _hit = Physics2D.Raycast(transform.position, transform.up, distance: _gridSize * 2, layerMask: _fruitLayer);
+                _hit = Physics2D.Raycast(transform.position, transform.up, distance: _gridSize, layerMask: _fruitLayer);
 
                 if (_hit)
                 {

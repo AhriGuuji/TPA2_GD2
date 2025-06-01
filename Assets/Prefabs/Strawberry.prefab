@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2087095125247145500}
   - component: {fileID: 2074280313402291152}
   - component: {fileID: 6268646507928426204}
-  - component: {fileID: 1232211860119986344}
   - component: {fileID: 2414515246399668680}
+  - component: {fileID: 6405798082788171126}
   m_Layer: 3
-  m_Name: Apple
+  m_Name: Strawberry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5d9070ede8d624d40907a578a8d592c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7377e892517d9264bb2da6e160080222, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,19 +139,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
---- !u!114 &1232211860119986344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8710106138172075723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7ad789441dea5e43b3ec042a8a9d115, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Apple
-  _lifeSpan: 5
 --- !u!50 &2414515246399668680
 Rigidbody2D:
   serializedVersion: 5
@@ -179,3 +166,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &6405798082788171126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8710106138172075723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6732722e6d2b8264cb6828a27d5ec9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Strawberry
+  _lifeSpan: 2
