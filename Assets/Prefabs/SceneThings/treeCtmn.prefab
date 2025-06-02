@@ -158,6 +158,7 @@ MonoBehaviour:
   - {fileID: 6875909316538773560, guid: 7d6a939f63dcded43825359fd628c70d, type: 3}
   - {fileID: 6405798082788171126, guid: b5f13f0ab9309b243870dc860a841768, type: 3}
   _spawnPoint: {fileID: 277590546408050210}
+  _maxTimeToSpawn: 8
 --- !u!1 &8957972236398996522
 GameObject:
   m_ObjectHideFlags: 0

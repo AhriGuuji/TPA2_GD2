@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _fruitName: Apple
+  _maxStorage: 7
+  _sprite: {fileID: 21300000, guid: 886f1601d2a0e4a47adb59a416b3e585, type: 3}
 --- !u!61 &6013582841392832474
 BoxCollider2D:
   m_ObjectHideFlags: 0

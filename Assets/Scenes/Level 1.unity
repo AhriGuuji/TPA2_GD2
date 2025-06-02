@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treeCtmn
       objectReference: {fileID: 0}
+    - target: {fileID: 9195180487566377763, guid: ed7bbe9276876624db2610dd627e8835, type: 3}
+      propertyPath: _fruits.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
