@@ -15,6 +15,7 @@ public class PlayerGridMovement : MonoBehaviour
     {
         _movementDir = InputSystem.actions.FindAction("Move");
         _layers = ~LayerMask.GetMask("Fruit", "Ignore Raycast");
+        Timer.Instance.StartTimer();
     }
 
     // Update is called once per frame
