@@ -25,7 +25,7 @@ public class MenuUI : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name.Contains("Sample"))
+        if (SceneManager.GetActiveScene().name.Contains("Level"))
         {
             _startMenu.enabled = false;
             _gameUI.enabled = true;

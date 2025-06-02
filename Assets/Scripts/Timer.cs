@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     public static Timer Instance;
-    [SerializeField] private int secondsPerDay = 60;
+    [SerializeField] private float secondsPerDay = 60f;
     [SerializeField] private int totalDays = 5;
+
+    public UnityEvent OnDay2Reached; 
 
     private int currentDay = 1;
     private float timeRemaining;
@@ -34,11 +37,16 @@ public class Timer : MonoBehaviour
         if (isTimerRunning && SceneManager.GetActiveScene().name.Contains("Level"))
         {
             timeRemaining -= Time.deltaTime;
-            
+
             if (timeRemaining <= 0)
             {
                 EndDay();
             }
+        }
+        
+        if (currentDay == 2)
+        {
+            OnDay2Reached.Invoke();
         }
     }
 
@@ -52,20 +60,15 @@ public class Timer : MonoBehaviour
         isTimerRunning = false;
         currentDay++;
         
-        if (ScoreManager.Instance != null)
-        {
-            ScoreManager.Instance.EndOfTheDayScore();
-        }
-        
         if (currentDay > totalDays)
         {
-            // Game over or final day logic
-            Debug.Log("All days completed!");
+            SceneManager.LoadScene("Final");
         }
         else
         {
             ResetTimer();
-            // Load next day or scene
+            ScoreManager.Instance.EndOfTheDayScore();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 

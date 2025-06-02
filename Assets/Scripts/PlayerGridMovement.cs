@@ -23,13 +23,16 @@ public class PlayerGridMovement : MonoBehaviour
     {
         SnapToGrid();
 
+        if (Time.timeScale == 0)
+            return;
+
         if (_movementDir.WasPressedThisFrame())
-        {
-            _move = _movementDir.ReadValue<Vector2>();
-            _cantPass = Physics2D.Raycast(transform.position, _move, distance: _gridSize, _layers);
-            float angle = Mathf.Atan2(-_move.x, _move.y) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
+            {
+                _move = _movementDir.ReadValue<Vector2>();
+                _cantPass = Physics2D.Raycast(transform.position, _move, distance: _gridSize, _layers);
+                float angle = Mathf.Atan2(-_move.x, _move.y) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
 
         if (_move != Vector3.zero && !_cantPass)
         {

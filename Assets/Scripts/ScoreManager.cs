@@ -6,6 +6,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     [SerializeField] private TMP_Text tMP_TotalScore;
     [SerializeField] private TMP_Text tMP_DailyScore;
+    [SerializeField] private TMP_Text tMP_Day;
     private int _totalScoreValue;
     private int _dailyScoreValue;
 
@@ -51,5 +52,6 @@ public class ScoreManager : MonoBehaviour
     {
         tMP_TotalScore.text = $"{_totalScore}";
         tMP_DailyScore.text = $"{_dailyScore}";
+        tMP_Day.text = $"{Timer.Instance.GetCurrentDay()}";
     }
 }
